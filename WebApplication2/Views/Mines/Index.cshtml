@@ -5,7 +5,7 @@
 }
 
 <h2>Index</h2>
-<table align="right">
+<table class="mines" align="right" style="vertical-align: top;">
     @foreach (var mine in this.Model.Mines)
     {
         <tr>
@@ -15,5 +15,18 @@
             <td>@Html.ActionLink("Details","Details", new {mineId = mine.MineId })</td>
         </tr>
     }
+    <tr>
+        @{ var totalLevel = 0;
+            foreach (var mine in this.Model.Mines)
+            {
+                totalLevel += mine.Level;
+            }
+
+         }
+        <td></td>
+        <td>Total</td>
+        <td>@totalLevel</td>
+        <td></td>
+    </tr>
 
 </table>
