@@ -13,6 +13,7 @@ namespace WebApplication2.Controllers
     {
         ApplicationDbContext dbContext = new ApplicationDbContext();
         // GET: Mines
+       
         public ActionResult Index()
         {
             var userId = this.User.Identity.GetUserId();
@@ -24,6 +25,13 @@ namespace WebApplication2.Controllers
         public ActionResult Details(int mineId)
         {
             var mine = dbContext.Mines.Find(mineId);
+            return View(mine);
+        }
+        [HttpPost]
+        public ActionResult Upgrade(string button, int mineId)
+        {
+            var mine = dbContext.Mines.Find(mineId);
+            mine.Level++;
             return View(mine);
         }
     }
