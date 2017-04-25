@@ -8,7 +8,7 @@
 <table class="mines" align="right" style="vertical-align: top;">
     @foreach (var mine in this.Model.Mines)
     {
-        <tr>
+        <tr class="@(mine.Type)">
             <td><img src="~/Content/img/icon-@(mine.Type).png"/></td>
             <td>@mine.Type</td>
             <td>@mine.Level</td>
@@ -19,6 +19,7 @@
                     <input type="submit" value="Upgrade" style="border: none; background-color: #00ff90; border-radius: 10px;">
                 </form>
             </td>
+            <td class="hourProduction">@mine.GetProductionPerHour()</td>
         </tr>
     }
     <tr>
@@ -36,3 +37,20 @@
     </tr>
 
 </table>
+
+<table align="right" style="vertical-align: bottom;">
+    <tr>
+        @foreach (var res in this.Model.Resources)
+        {
+            <td class="res-img @(res.Type)"><img src="~/Content/img/icon-@(res.Type).png" /></td>
+            <td class="res-value @(res.Type)">@res.Value.ToString("F4")</td>
+            <td class="res-lastUpdate @(res.Type)">@res.LastUpdate</td>
+        }
+    </tr>
+
+</table>
+
+@section Scripts {
+    <script src="~/Scripts/javascript/JavaScript.js"></script>
+<script src="~/Scripts/Date.min.js"></script>
+}
