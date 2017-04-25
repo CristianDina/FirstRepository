@@ -38,6 +38,11 @@ namespace WebApplication2.Models
 
         public int Level { get; set; }
 
+        internal void Upgrade()
+        {
+            Level++;
+        }
+
         public ResourceType Type { get; set; }
     }
 

@@ -40,5 +40,8 @@
     @{ var prod = 13 * Model.Level;}
     <h4>Current Production: @prod</h4>
     <h4>Next level Production: @(13 + prod)</h4>
-
+    @using (Html.BeginForm("DetailsUpgrade", "Mines", new {mineId = this.Model.MineId }))
+    {
+        <input type="submit" value="Upgrade" name="submit" style="border: none; background-color: #00ff90; border-radius: 10px; font-size:x-large;"/>
+    }  
 </div>
