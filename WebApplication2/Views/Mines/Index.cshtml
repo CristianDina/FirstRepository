@@ -13,6 +13,12 @@
             <td>@mine.Type</td>
             <td>@mine.Level</td>
             <td>@Html.ActionLink("Details","Details", new {mineId = mine.MineId })</td>
+            <td>
+                <form action="/Mines/IndexUpgrade" method="post">
+                    <input type="hidden" name="MineId" value="@mine.MineId">
+                    <input type="submit" value="Upgrade" style="border: none; background-color: #00ff90; border-radius: 10px;">
+                </form>
+            </td>
         </tr>
     }
     <tr>

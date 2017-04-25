@@ -27,12 +27,26 @@ namespace WebApplication2.Controllers
             var mine = dbContext.Mines.Find(mineId);
             return View(mine);
         }
+
         [HttpPost]
-        public ActionResult Upgrade(string button, int mineId)
+        public ActionResult DetailsUpgrade(int mineId)
+        {
+            Upgrade(mineId);
+            return RedirectToAction("Details", "Mines", new { mineId});
+        }
+
+        [HttpPost]
+        public ActionResult IndexUpgrade(int mineId)
+        {
+            Upgrade(mineId);
+            return RedirectToAction("Index", "Mines");
+        }
+
+        public void Upgrade(int mineId)
         {
             var mine = dbContext.Mines.Find(mineId);
-            mine.Level++;
-            return View(mine);
+            mine.Upgrade();
+            dbContext.SaveChanges();
         }
     }
 }
