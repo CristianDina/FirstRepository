@@ -19,6 +19,7 @@ namespace WebApplication2.Controllers
             var userId = this.User.Identity.GetUserId();
             var user = dbContext.Users.Find(userId);
             var city = user.Cities.First();
+            this.UpdteResources(city);
             return View(city);
         }
 
@@ -40,6 +41,10 @@ namespace WebApplication2.Controllers
         {
             Upgrade(mineId);
             return RedirectToAction("Index", "Mines");
+           // return View(new MessageViewModel
+            //{
+            //    IdentityMessage = "Upgrade Succesful";
+            //});
         }
 
         public void Upgrade(int mineId)
@@ -47,6 +52,24 @@ namespace WebApplication2.Controllers
             var mine = dbContext.Mines.Find(mineId);
             mine.Upgrade();
             dbContext.SaveChanges();
+        }
+
+        private void UpdteResources(City city)
+        {
+            var start = DateTime.Now;
+            foreach (var res in city.Resources)
+            {
+                foreach (var mine in city.Mines)
+                {
+                    if (mine.Type == res.Type)
+                    {
+                        res.Value += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
+                    }
+                }
+                res.LastUpdate = start;
+            }
+            dbContext.SaveChanges();
+
         }
     }
 }
