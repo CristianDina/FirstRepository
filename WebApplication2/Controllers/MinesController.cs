@@ -13,12 +13,16 @@ namespace WebApplication2.Controllers
     {
         ApplicationDbContext dbContext = new ApplicationDbContext();
         // GET: Mines
-       
-        public ActionResult Index()
+        public ActionResult Index(int? cityId)
         {
             var userId = this.User.Identity.GetUserId();
             var user = dbContext.Users.Find(userId);
             var city = user.Cities.First();
+            if (cityId != null)
+            {
+                city = dbContext.Cities.Find(cityId);
+            }
+
             this.UpdteResources(city);
             return View(city);
         }
@@ -33,18 +37,14 @@ namespace WebApplication2.Controllers
         public ActionResult DetailsUpgrade(int mineId)
         {
             Upgrade(mineId);
-            return RedirectToAction("Details", "Mines", new { mineId});
+            return RedirectToAction("Details", "Mines", new { mineId });
         }
 
         [HttpPost]
-        public ActionResult IndexUpgrade(int mineId)
+        public ActionResult IndexUpgrade(int mineId, int cityId)
         {
             Upgrade(mineId);
-            return RedirectToAction("Index", "Mines");
-           // return View(new MessageViewModel
-            //{
-            //    IdentityMessage = "Upgrade Succesful";
-            //});
+            return RedirectToAction("Index", "Mines", new { cityId });
         }
 
         public void Upgrade(int mineId)
