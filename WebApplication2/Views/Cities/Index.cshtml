@@ -1,0 +1,25 @@
+﻿@model WebApplication2.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Cities";
+}
+
+<h2>Cities</h2>
+<form action="/Cities/AddCity" method="post" >
+    <input type="submit" value="Add city" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;"/>
+</form>
+<br/>
+@{ 
+    if (Model != null) {
+        foreach (var city in Model.Cities)
+        {
+            using (Html.BeginForm("Index", "Mines", new { cityId = city.CityId }))
+            {
+                var cityName = "City" + city.CityId;
+        <input type="submit" value=@cityName name="submit" style="border-color:green; background-color: white; border-radius: 10px; font-size:x-large;" />
+        <hr/>
+                }
+            }
+        }
+    }
+

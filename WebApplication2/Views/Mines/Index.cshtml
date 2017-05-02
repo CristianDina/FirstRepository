@@ -3,42 +3,29 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<h1>City @Model.CityId</h1>
 <table class="mines" align="right" style="vertical-align: top;">
-    @foreach (var mine in this.Model.Mines)
-    {
+
+        @foreach (var mine in Model.Mines)
+        {
         <tr class="@(mine.Type)">
             <td><img src="~/Content/img/icon-@(mine.Type).png"/></td>
-            <td>@mine.Type</td>
+            <td>@Html.ActionLink(mine.Type.ToString(), "Details", new { mineId = mine.MineId })</td>
             <td>@mine.Level</td>
-            <td>@Html.ActionLink("Details","Details", new {mineId = mine.MineId })</td>
             <td>
                 <form action="/Mines/IndexUpgrade" method="post">
                     <input type="hidden" name="MineId" value="@mine.MineId">
-                    <input type="submit" value="Upgrade" style="border: none; background-color: #00ff90; border-radius: 10px;">
+                    <input type="hidden" name="CityId" value="@Model.CityId">
+                    <input type="submit" value="Upgrade" style="border: none; background-color: lightgreen; border-radius: 10px;">
                 </form>
             </td>
             <td class="hourProduction">@mine.GetProductionPerHour()</td>
         </tr>
     }
-    <tr>
-        @{ var totalLevel = 0;
-            foreach (var mine in this.Model.Mines)
-            {
-                totalLevel += mine.Level;
-            }
-
-         }
-        <td></td>
-        <td>Total</td>
-        <td>@totalLevel</td>
-        <td></td>
-    </tr>
 
 </table>
 
-<table align="right" style="vertical-align: bottom;">
+<table align="left" style="vertical-align: bottom;">
     <tr>
         @foreach (var res in this.Model.Resources)
         {

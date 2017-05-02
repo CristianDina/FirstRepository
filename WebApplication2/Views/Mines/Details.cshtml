@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 <div class="mine-detail">
-    <h2>@this.Model.Type</h2>
+    <h2>@Model.Type</h2>
 
     @if (this.Model.Type == WebApplication2.Models.ResourceType.Clay)
     {
@@ -38,10 +38,13 @@
     <img src="~/Content/img/mine-@(Model.Type).png" />
 
     @{ var prod = 13 * Model.Level;}
+    <h4>Current Level: @Model.Level</h4>
     <h4>Current Production: @prod</h4>
     <h4>Next level Production: @(13 + prod)</h4>
+
+
     @using (Html.BeginForm("DetailsUpgrade", "Mines", new {mineId = this.Model.MineId }))
     {
-        <input type="submit" value="Upgrade" name="submit" style="border: none; background-color: #00ff90; border-radius: 10px; font-size:x-large;"/>
+        <input type="submit" value="Upgrade" name="submit" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;"/>
     }  
 </div>
