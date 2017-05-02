@@ -43,8 +43,61 @@
     <h4>Next level Production: @(13 + prod)</h4>
 
 
-    @using (Html.BeginForm("DetailsUpgrade", "Mines", new {mineId = this.Model.MineId }))
+
+
+    <section id="upgradeForm">
+
+        <input type="submit" id="upgradeB" class="btn btn-default" value="Upgrade" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;" />
+        @using (Html.BeginForm("DetailsUpgrade", "Mines", new { mineId = this.Model.MineId }, FormMethod.Post, new { @id = "upgradeform" }))
+        {
+            <input type="submit" id="upgradeButton" class="btn btn-default" value="Upgrade" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large; display:none"/>
+        }
+        <div id='countdown' class="countdown"></div>
+    </section>
+
+    <div id='countdown'></div>
+    @section Scripts{ 
+    <script type="text/javascript">
+        $("#upgradeB").click(function () {
+                    countdown('countdown');
+                });
+
+        function countdown(element) {
+            $("#upgradeB").css('background-color', 'gray');
+            $("#upgradeB").prop('disabled', true);
+                    var interval;
+                    var minutes = 0;
+                    var seconds = @Model.Level *10;
+
+                    interval = setInterval(function () {
+                        var el = document.getElementById(element);
+                        if (seconds == 0) {
+                            if (minutes == 0) {
+                                $("#upgradeB").css('background-color', 'lightgreen');
+                                $("#upgradeB").prop('disabled', false);
+                                clearInterval(interval);
+                                $("#upgradeform").trigger("submit");
+                                return;
+                            } else {
+                                minutes--;
+                                seconds = 60;
+                            }
+                        }
+                        el.innerHTML = minutes + ' : ' + seconds;
+                        seconds--;
+                    }, 1000);
+                }
+    </script>
+    
+    }
+    <style>
+    .countdown
     {
-        <input type="submit" value="Upgrade" name="submit" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;"/>
-    }  
+    border: none;
+    font-family: verdana;
+    font-size: 16pt;
+    font-weight: bold;
+    border-right-color: #FFFFFF;
+    }
+    </style>
 </div>
