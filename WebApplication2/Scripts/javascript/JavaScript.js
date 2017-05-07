@@ -10,7 +10,7 @@
         var currentProduction = 0;
         var currentValue = parseFloat($(".res-value." + resourceName).text());
         var lastUpdate = Date.parse($(".res-lastUpdate." + resourceName).text());
-        var mines = $(".mines").find("." + resourceName)
+        var mines = $(".mine-wrapper").find("." + resourceName)
         $.each(mines, function (index, value) {
             
             currentProduction += parseInt($(value).find(".hourProduction").text());
