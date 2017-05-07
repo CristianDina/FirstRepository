@@ -38,6 +38,12 @@ namespace WebApplication2.Models
 
         public int Level { get; set; }
 
+        public string MineStyle { get; set; }
+
+        public DateTime UpgradeCompletion { get; set; } = DateTime.Now;
+
+        public string Description { get; set; }
+
         internal void Upgrade()
         {
             Level++;

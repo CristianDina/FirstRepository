@@ -11,190 +11,24 @@
             {
                 <td class="res-img @(res.Type)"><img src="~/Content/img/icon-@(res.Type).png" /></td>
                 <td class="res-value @(res.Type)">@res.Value.ToString("F4")</td>
-                <td class="res-lastUpdate @(res.Type)" style="display:none">@res.LastUpdate</td>
+                <td class="res-lastUpdate @(res.Type) hidden">@res.LastUpdate</td>
             }
         </tr>
     </table>
-
     <div class="main">
         <img id="villageImage" src="Content/img/village-bg.jpg" />
         <div class="mine-wrapper">
             @foreach (var mine in Model.Mines)
             {
-                if (Model.Mines.Count == 4)
-                {
-                    if (Model.Mines.IndexOf(mine) == 0)
-                    {
                         <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-clay mine-clay-1" style="text-align: center; font-weight: bold;">
+                            <div class="@(mine.Type) mine-level mine-@(mine.Type.ToString().ToLower()) @mine.MineStyle" style="text-align: center; vertical-align: middle; font-weight: bold;">
                                 <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
                                 <div>@mine.Level</div>
                             </div>
                         </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 1)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-iron mine-iron-1" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 2)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wheat mine-wheat-1" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 3)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wood mine-wood-1" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                }
-                else
-                {
-                    if (Model.Mines.IndexOf(mine) == 0)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-clay mine-clay-1" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 1)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-clay mine-clay-2" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 2)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-clay mine-clay-3" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 3)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-iron mine-iron-1" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 4)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-iron mine-iron-2" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 5)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wheat mine-wheat-1" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 6)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wheat mine-wheat-2" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 7)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wheat mine-wheat-3" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 8)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wheat mine-wheat-4" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 9)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wheat mine-wheat-5" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 10)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wheat mine-wheat-6" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 11)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wood mine-wood-1" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 12)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wood mine-wood-2" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                    if (Model.Mines.IndexOf(mine) == 13)
-                    {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-wood mine-wood-3" style="text-align: center; font-weight: bold;">
-                                <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
-                                <div>@mine.Level</div>
-                            </div>
-                        </a>
-                    }
-                }
-
             }
-
         </div>
     </div>
-
 </div>
 
 @section Scripts {

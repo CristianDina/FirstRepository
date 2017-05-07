@@ -31,77 +31,105 @@ namespace WebApplication2.Controllers
             {
                 Mines = new List<Mine>
                 {
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Clay,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Clay,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Clay,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Iron,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Iron,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wheat,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wheat,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wheat,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wheat,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wheat,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wheat,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wood,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wood,
-                               },
-                               new Mine
-                               {
-                                   Level = 0,
-                                   Type = ResourceType.Wood,
-                               },
-                },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Clay,
+                        MineStyle = "mine-clay-1",
+                        Description = "Clay is produced here. By increasing its level, you increase the clay production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Clay,
+                        MineStyle = "mine-clay-2",
+                        Description = "Clay is produced here. By increasing its level, you increase the clay production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Clay,
+                        MineStyle = "mine-clay-3",
+                        Description = "Clay is produced here. By increasing its level, you increase the clay production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Iron,
+                        MineStyle = "mine-iron-1",
+                        Description = "Here miners produce the precious resource of iron. By increasing the mine`s level, you increase the iron production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Iron,
+                        MineStyle = "mine-iron-2",
+                        Description = "Here miners produce the precious resource of iron. By increasing the mine`s level, you increase the iron production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wheat,
+                        MineStyle = "mine-wheat-1",
+                        Description = "Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wheat,
+                        MineStyle = "mine-wheat-2",
+                        Description = "Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wheat,
+                        MineStyle = "mine-wheat-3",
+                        Description = "Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wheat,
+                        MineStyle = "mine-wheat-4",
+                        Description = "Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wheat,
+                        MineStyle = "mine-wheat-5",
+                        Description = "Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wheat,
+                        MineStyle = "mine-wheat-6",
+                        Description = "Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wood,
+                        MineStyle = "mine-wood-1",
+                        Description = "The woodcutter cuts down trees in order to produce lumber. The further you extend the woodcutter, the more lumber is produced.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wood,
+                        MineStyle = "mine-wood-2",
+                        Description = "The woodcutter cuts down trees in order to produce lumber. The further you extend the woodcutter, the more lumber is produced.",
+                    },
+                    new Mine
+                    {
+                        Level = 0,
+                        Type = ResourceType.Wood,
+                        MineStyle = "mine-wood-3",
+                        Description = "The woodcutter cuts down trees in order to produce lumber. The further you extend the woodcutter, the more lumber is produced.",
+                    },
+                },            
                 Resources = new List<Resource>
                 {
                     new Resource
