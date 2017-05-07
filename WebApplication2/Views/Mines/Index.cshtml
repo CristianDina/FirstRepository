@@ -3,8 +3,111 @@
 @{
     ViewBag.Title = "Index";
 }
-<h1>City @Model.CityId</h1>
-<table class="mines" align="right" style="vertical-align: top;">
+
+<div class="container body-content">
+    <table class="resourcesTable">
+        <tr>
+            @foreach (var res in this.Model.Resources)
+            {
+                <td class="res-img @(res.Type)"><img src="~/Content/img/icon-@(res.Type).png" /></td>
+                <td class="res-value @(res.Type)">@res.Value.ToString("F4")</td>
+                <td class="res-lastUpdate @(res.Type)" style="display:none">@res.LastUpdate</td>
+            }
+        </tr>
+    </table>
+
+    <div class="main">
+        <img id="villageImage" src="Content/img/village-bg.jpg" />
+        <div class="mine-wrapper">
+        @foreach (var mine in Model.Mines)
+        {
+            if (Model.Mines.Count == 4)
+            {
+                if (Model.Mines.IndexOf(mine) == 0)
+                {
+                    <div class="mine-level mine-clay-1"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 1)
+                {
+                    <div class="mine-level mine-iron-1"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 2)
+                {
+                    <div class="mine-level mine-wheat-1"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 3)
+                {
+                    <div class="mine-level mine-wood-1"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+            }
+            else
+            {
+                if (Model.Mines.IndexOf(mine) == 0)
+                {
+                    <div class="mine-level mine-clay-1"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 1)
+                {
+                    <div class="mine-level mine-clay-2"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 2)
+                {
+                    <div class="mine-level mine-clay-3"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 3)
+                {
+                    <div class="mine-level mine-iron-1"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 4)
+                {
+                    <div class="mine-level mine-iron-2"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 5)
+                {
+                    <div class="mine-level mine-wheat-1"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 6)
+                {
+                    <div class="mine-level mine-wheat-2"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 7)
+                {
+                    <div class="mine-level mine-wheat-3"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 8)
+                {
+                    <div class="mine-level mine-wheat-4"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 9)
+                {
+                    <div class="mine-level mine-wheat-5"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 10)
+                {
+                    <div class="mine-level mine-wheat-6"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 11)
+                {
+                    <div class="mine-level mine-wood-1"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 12)
+                {
+                    <div class="mine-level mine-wood-2"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+                if (Model.Mines.IndexOf(mine) == 13)
+                {
+                    <div class="mine-level mine-wood-3"><div style="text-align: center; font-weight: bold;">@Html.ActionLink(mine.Level.ToString(), "Details", new { mineId = mine.MineId })</div></div>
+                }
+            }
+
+        }
+
+        </div>
+    </div>
+
+</div>
+
+<!--<table class="mines" align="right" style="vertical-align: top;">
 
         @foreach (var mine in Model.Mines)
         {
@@ -23,19 +126,7 @@
         </tr>
     }
 
-</table>
-
-<table align="left" style="vertical-align: bottom;">
-    <tr>
-        @foreach (var res in this.Model.Resources)
-        {
-            <td class="res-img @(res.Type)"><img src="~/Content/img/icon-@(res.Type).png" /></td>
-            <td class="res-value @(res.Type)">@res.Value.ToString("F4")</td>
-            <td class="res-lastUpdate @(res.Type)">@res.LastUpdate</td>
-        }
-    </tr>
-
-</table>
+</table>-->
 
 @section Scripts {
     <script src="~/Scripts/javascript/JavaScript.js"></script>

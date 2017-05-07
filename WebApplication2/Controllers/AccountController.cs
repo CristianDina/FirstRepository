@@ -170,12 +170,62 @@ namespace WebApplication2.Controllers
                                new Mine
                                {
                                    Level = 0,
+                                   Type = ResourceType.Clay,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Clay,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Iron,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
                                    Type = ResourceType.Iron,
                                },
                                new Mine
                                {
                                    Level = 0,
                                    Type = ResourceType.Wheat,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wood,
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wood,
                                },
                                new Mine
                                {

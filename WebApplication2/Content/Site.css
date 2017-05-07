@@ -64,7 +64,7 @@ td {
 .mine-wrapper {
     position: absolute;
     top: 206px;
-    left: 588px;
+    left: 585px;
 }
 
 .mine-level{
@@ -79,31 +79,102 @@ td {
     transform:scale(1.5);
 }
 
-.mine-clay {
-    background: brown;
-    top: 76px;
-    left: 246px;
+.mine-clay-1 {
+    background: #F1A760;
+    top: 75px;
+    left: 245px;
+    border: 1px solid #000;
 }
 
-.mine-wheat {
-    background: yellow;
-    top: 120px;
-    left: 120px;
-    transform: translate(10px, 10px);
-    border:1px solid #000;
+.mine-clay-2 {
+    background: #F1A760;
+    top: 245px;
+    left: 155px;
+    border: 1px solid #000;
 }
 
-.mine-wood {
-    background: green;
-    top: 203px;
-    left: 240px;
+.mine-clay-3 {
+    background: #F1A760;
+    top: 225px;
+    left: 335px;
+    border: 1px solid #000;
 }
 
-.mine-iron {
-    background: gray;
-    top: 93px;
-    left: 371px;
+.mine-wheat-1 {
+    background: #FFF098;
+    top: 157px;
+    left: 135px;
+    border: 1px solid #000;
+}
 
+.mine-wheat-2 {
+    background: #FFF098;
+    top: 175px;
+    left: 50px;
+    border: 1px solid #000;
+}
+
+.mine-wheat-3 {
+    background: #FFF098;
+    top: 115px;
+    left: 60px;
+    border: 1px solid #000;
+}
+
+.mine-wheat-4 {
+    background: #FFF098;
+    top: 115px;
+    left: 125px;
+    border: 1px solid #000;
+}
+
+.mine-wheat-5 {
+    background: #FFF098;
+    top: 30px;
+    left: 245px;
+    border: 1px solid #000;
+}
+
+.mine-wheat-6 {
+    background: #FFF098;
+    top: 155px;
+    left: 370px;
+    border: 1px solid #000;
+}
+
+.mine-wood-1 {
+    background: #92D868;
+    top: 220px;
+    left: 250px;
+    border: 1px solid #000;
+}
+
+.mine-wood-2 {
+    background: #92D868;
+    top: 25px;
+    left: 135px;
+    border: 1px solid #000;
+}
+
+.mine-wood-3 {
+    background: #92D868;
+    top: 35px;
+    left: 330px;
+    border: 1px solid #000;
+}
+
+.mine-iron-1 {
+    background: #C7E9EB;
+    top: 90px;
+    left: 390px;
+    border: 1px solid #000;
+}
+
+.mine-iron-2 {
+    background: #C7E9EB;
+    top: 60px;
+    left: 105px;
+    border: 1px solid #000;
 }
 
 @keyframes upgrading {
