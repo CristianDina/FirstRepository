@@ -1,0 +1,13 @@
+﻿@model WebApplication2.Controllers.BuildingViewModel
+
+@{
+    ViewBag.Title = "Build";
+}
+
+<h2>Build</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.BuildingId)
+    @Html.ListBoxFor(m => m.SelectedBuildingType, this.Model.BuildingTypes)
+    <button type="submit">Build</button>
+}

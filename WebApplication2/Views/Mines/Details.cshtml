@@ -25,7 +25,15 @@
         <div id='countdown' class="countdown"></div>
     </section>
 
-    @section Scripts{ 
+    @using (Html.BeginForm("NewUpgrade", "Mines", new { mineId = this.Model.MineId }))
+    {
+        Html.HiddenFor(m => m.MineId);
+        <div>A fast upgrade?: @Html.CheckBox("fastUpgrade")</div>
+        <button type="submit">NewUpgrade</button>
+    }
+
+
+    @section Scripts{
     <script type="text/javascript">
         $("#upgradeB").click(function () {
                     countdown('countdown');
