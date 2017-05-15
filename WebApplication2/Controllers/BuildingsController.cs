@@ -27,20 +27,21 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Build(BuildingViewModel build)
+        public ActionResult Build(BuildingViewModel build, int cityId)
         {
             var building = dbContext.Buildings.Find(build.BuildingId);
             building.BuildingTypeId = build.SelectedBuildingType;
             building.Level = 1;
             dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Buildings", new { cityId});
 
         }
 
-        public ActionResult Build(int buildingId)
+        public ActionResult Build(int buildingId, int cityId)
         {
             return View(new BuildingViewModel
             {
+                CityId = cityId, 
                 BuildingId = buildingId,
                 BuildingTypes = this.dbContext.BuildingTypes.Select(b => new SelectListItem
                 {
@@ -50,10 +51,20 @@ namespace WebApplication2.Controllers
 
             });
         }
+
+        [HttpPost]
+        public ActionResult Upgrade(int buildingId)
+        {
+            var building = dbContext.Buildings.Find(buildingId);
+            building.Level++;
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 
     public class BuildingViewModel
     {
+        public int CityId { get; set; }
         public int BuildingId { get; set; }
         public IEnumerable<SelectListItem> BuildingTypes { get; set; }
         public int? SelectedBuildingType { get; set; }

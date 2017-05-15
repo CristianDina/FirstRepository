@@ -5,6 +5,7 @@
 }
 
 <h2>Buildings</h2>
+<body style="background-image:url(Content/img/city.jpg)">
 <table>
 @foreach (var building in Model.Buildings)
 {
@@ -17,13 +18,19 @@
         if (building.BuildingType == null) { 
         <td>Empty</td>
         <td>@building.Level</td>
-        <td><a href="@Url.Action("Build", "Buildings", new { buildingId = building.BuildingId })">Build</a></td>
+        <td><a href="@Url.Action("Build", "Buildings", new { buildingId = building.BuildingId, cityId = Model.CityId })">Build</a></td>
         } 
         else
         {
         <td>@building.BuildingType.Name</td>
         <td>@building.Level</td>
-        <td><a href="@Url.Action("Build", "Buildings", new { buildingId = building.BuildingId })">Build</a></td>
+
+        <td>
+            @using (Html.BeginForm("Upgrade", "Buildings", new { buildingId = building.BuildingId }, FormMethod.Post))
+            {
+                <input type="image" src="~/Content/img/plus.png" width="15" height="15" id="upgradeButton" class="btTxt submit" value="Upgrade" />
+            }
+        </td>
         }
 
         }
@@ -31,3 +38,4 @@
 
 }
 </table>
+</body>

@@ -221,6 +221,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\background-clearing.jpg" />
+    <Content Include="Content\img\barracks.png" />
+    <Content Include="Content\img\city.jpg" />
+    <Content Include="Content\img\granary.png" />
     <Content Include="Content\img\icon-clay.png" />
     <Content Include="Content\img\icon-iron.png" />
     <Content Include="Content\img\icon-wheat.png" />
@@ -229,7 +232,9 @@
     <Content Include="Content\img\mine-iron.png" />
     <Content Include="Content\img\mine-wheat.png" />
     <Content Include="Content\img\mine-wood.png" />
+    <Content Include="Content\img\plus.png" />
     <Content Include="Content\img\village-bg.jpg" />
+    <Content Include="Content\img\warehouse.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
