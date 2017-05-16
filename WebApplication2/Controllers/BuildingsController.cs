@@ -53,12 +53,12 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Upgrade(int buildingId)
+        public ActionResult Upgrade(int buildingId, int cityId)
         {
             var building = dbContext.Buildings.Find(buildingId);
             building.Level++;
             dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Buildings",new { cityId});
         }
     }
 

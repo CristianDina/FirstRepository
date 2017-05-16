@@ -26,7 +26,7 @@
         <td>@building.Level</td>
 
         <td>
-            @using (Html.BeginForm("Upgrade", "Buildings", new { buildingId = building.BuildingId }, FormMethod.Post))
+            @using (Html.BeginForm("Upgrade", "Buildings", new { buildingId = building.BuildingId, cityId = Model.CityId }, FormMethod.Post))
             {
                 <input type="image" src="~/Content/img/plus.png" width="15" height="15" id="upgradeButton" class="btTxt submit" value="Upgrade" />
             }

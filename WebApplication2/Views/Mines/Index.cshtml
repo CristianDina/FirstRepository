@@ -21,14 +21,19 @@
         <div class="mine-wrapper">
             @foreach (var mine in Model.Mines)
             {
-                        <a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })">
-                            <div class="@(mine.Type) mine-level mine-@(mine.Type.ToString().ToLower()) @mine.MineStyle" style="text-align: center; vertical-align: middle; font-weight: bold;">
+                        @*<a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })"*@
+                
+                            <div class="@(mine.Type) mine-level mine-@(mine.Type.ToString().ToLower()) @mine.MineStyle mine-details-btn" data-mine-id="@mine.MineId" style="text-align: center; vertical-align: middle; font-weight: bold;">
                                 <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
                                 <div>@mine.Level</div>
                             </div>
-                        </a>
+                        @*@<!--a-->*@
             }
         </div>
+    </div>
+    <div id="mine-details-container">
+        <div class="close-btn">X</div>
+        <div class="content"></div>
     </div>
 </div>
 
