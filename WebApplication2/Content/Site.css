@@ -61,6 +61,16 @@ td {
     top:205px;
     left:585px;
 }
+#cityBuildingsImage {
+    position: absolute;
+    top: 317px;
+    left: 788px;
+    cursor: pointer;
+}
+#cityBuildingsImage:hover {
+    transform: scale(1.01);
+}
+
 .mine-wrapper {
     position: absolute;
     top: 206px;
@@ -210,4 +220,8 @@ td {
 
 .mine-details-btn {
     cursor: pointer;
+}
+
+.building{
+
 }

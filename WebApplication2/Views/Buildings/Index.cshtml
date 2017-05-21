@@ -31,6 +31,9 @@
                 <input type="image" src="~/Content/img/plus.png" width="15" height="15" id="upgradeButton" class="btTxt submit" value="Upgrade" />
             }
         </td>
+        <td>
+            <img class="building" src='@Url.Content("~/Content/img/"+@building.BuildingType.Name.ToLower()+".png")' />    
+        </td>
         }
 
         }

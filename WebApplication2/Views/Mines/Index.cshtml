@@ -15,9 +15,11 @@
             }
         </tr>
     </table>
-    <div><a href="@Url.Action("Index", "Buildings", new { cityId = Model.CityId })">Buildings</a></div>
     <div class="main">
         <img id="villageImage" src="Content/img/village-bg.jpg" />
+        <a href='@Url.Action("Index", "Buildings", new { cityId = Model.CityId })'>
+            <img id="cityBuildingsImage" src='@Url.Content("~/Content/img/city_buildings.jpg")' />
+        </a>
         <div class="mine-wrapper">
             @foreach (var mine in Model.Mines)
             {
