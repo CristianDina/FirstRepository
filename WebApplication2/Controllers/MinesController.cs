@@ -55,7 +55,7 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost]
-        public ActionResult NewUpgrade(int mineId, Boolean fastUpgrade)
+        public ActionResult NewUpgrade(int mineId, int cityId, Boolean fastUpgrade)
         {
             var mine = dbContext.Mines.Find(mineId);
             var city = mine.City;
@@ -69,7 +69,7 @@ namespace WebApplication2.Controllers
             var amounts = needed.Select(n => n.amount);
 
             var r = needed.Join(have, n => n.type, h => h.Type,(n, h) => (needed: n, have: h));
-            if (!r.All(_ => _.needed.amount < _.have.Value))
+            if (!r.All(_ => _.needed.amount < _.have.Value) && mine.Level>1)
             {
                 return View(new MessageViewModel { Message = $"Not Enough Resources" });
             }
@@ -83,7 +83,8 @@ namespace WebApplication2.Controllers
                 item.have.Value -= item.needed.amount;
             }
 
-            return View(new MessageViewModel { Message = $"Mine.Id = {mineId} {fastUpgrade}" });
+            //return View(new MessageViewModel { Message = $"Mine.Id = {mineId} {fastUpgrade}" });
+            return RedirectToAction("Index", "Mines", new { cityId });
         }
 
         private void UpdteResources(City city)

@@ -4,9 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Buildings</h2>
 <body style="background-image:url(Content/img/city.jpg)">
-<table>
+@*<table>
 @foreach (var building in Model.Buildings)
 {
     <tr>
@@ -40,24 +39,37 @@
     </tr>
 
 }
-</table>
+</table>*@
 
 @foreach (var building in Model.Buildings)
 {
     if (building.BuildingType != null)
     {
         <img class="building-@building.BuildingType.Name.ToLower()-@Model.Buildings.IndexOf(building)" src='@Url.Content("~/Content/img/" + @building.BuildingType.Name.ToLower() + ".png")' />
-        <div class="building-level building-details-@Model.Buildings.IndexOf(building) mine-details-btn float" data-building-id="@building.BuildingId" style="text-align: center; vertical-align: middle; font-weight: bold;">
+        <div class="building-level building-details-@Model.Buildings.IndexOf(building) mine-details-btn" data-building-id="@building.BuildingId" style="text-align: center; vertical-align: middle; font-weight: bold;">
             <div>@building.Level</div>
         </div>
     }
     else
     {
-        <div class="building-level building-details-@Model.Buildings.IndexOf(building) mine-details-btn float" data-building-id="@building.BuildingId" style="text-align: center; vertical-align: middle; font-weight: bold;">
-            <div><a href="@Url.Action("Build", "Buildings", new { buildingId = building.BuildingId, cityId = Model.CityId })"><img src="~/Content/img/hammer.jpg"></a></div>
-        </div>
-        
-    }
+        @*<a href="@Url.Action("Build", "Buildings", new { buildingId = building.BuildingId, cityId = Model.CityId })">*@
+            <div class="building-level building-details-@Model.Buildings.IndexOf(building) build-btn" data-building-id="@building.BuildingId" data-city-id="@building.CityId" style="text-align: center; vertical-align: middle; font-weight: bold;">
+                    <img src="~/Content/img/hammer.jpg">
+            </div>
+        @*</a>*@
 
+    }
 }
+
+
+
+@section Scripts {
+    <script src="~/Scripts/javascript/buildings.js"></script>
+}
+
 </body>
+
+<div id="mine-details-container">
+    <div class="close-btn">X</div>
+    <div class="content"></div>
+</div>

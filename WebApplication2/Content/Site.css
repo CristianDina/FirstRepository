@@ -221,6 +221,9 @@ td {
 .mine-details-btn {
     cursor: pointer;
 }
+.build-btn {
+    cursor: pointer;
+}
 
 .building-barracks-0 {
     position: absolute;
@@ -460,7 +463,10 @@ td {
 }
 
 .float {
-    z-index: 99999;
+    z-index: 1;
+}
+.float-above {
+    z-index: 2;
 }
 
 .building-details-0 {

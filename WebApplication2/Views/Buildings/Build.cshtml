@@ -2,12 +2,15 @@
 
 @{
     ViewBag.Title = "Build";
+    this.Layout = null;
 }
-
-<h2>Build</h2>
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(m => m.BuildingId)
-    @Html.ListBoxFor(m => m.SelectedBuildingType, this.Model.BuildingTypes)
-    <button type="submit">Build</button>
-}
+<div class="mine-detail">
+    <h2>Select the building to construct</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.BuildingId)
+        @Html.ListBoxFor(m => m.SelectedBuildingType, this.Model.BuildingTypes)
+        <br/>
+        <button type="submit" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;">Build</button>
+    }
+</div>

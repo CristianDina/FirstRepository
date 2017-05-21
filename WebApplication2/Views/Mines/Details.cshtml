@@ -16,7 +16,7 @@
     <h4>Current Production: @prod</h4>
     <h4>Next level Production: @(13 + prod)</h4>
 
-    <section id="upgradeForm">
+    <section id="upgradeForm" style="display:none">
 
         <input type="submit" id="upgradeB" class="btn btn-default" value="Upgrade" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;" />
         @using (Html.BeginForm("DetailsUpgrade", "Mines", new { mineId = this.Model.MineId }, FormMethod.Post, new { @id = "upgradeform" }))
@@ -26,11 +26,11 @@
         <div id='countdown' class="countdown"></div>
     </section>
 
-    @using (Html.BeginForm("NewUpgrade", "Mines", new { mineId = this.Model.MineId }))
+    @using (Html.BeginForm("NewUpgrade", "Mines", new { mineId = this.Model.MineId, cityId = this.Model.CityId }))
     {
         Html.HiddenFor(m => m.MineId);
-        <div>A fast upgrade?: @Html.CheckBox("fastUpgrade")</div>
-        <button type="submit">NewUpgrade</button>
+        <button type="submit" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;">Upgrade</button>
+        <div>Do you want a fast upgrade?: @Html.CheckBox("fastUpgrade")</div>
     }
 
 

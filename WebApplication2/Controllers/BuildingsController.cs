@@ -60,6 +60,24 @@ namespace WebApplication2.Controllers
             dbContext.SaveChanges();
             return RedirectToAction("Index", "Buildings",new { cityId});
         }
+
+        public ActionResult Details(int buildingId)
+        {
+            var building = dbContext.Buildings.Find(buildingId);
+            return View(building);
+        }
+
+        public ActionResult Barn(int? buildingId, int? cityId) // to be used
+        {
+            var building = dbContext.Buildings.Find(buildingId);
+            return RedirectToAction("Index", "Buildings", new { cityId });
+        }
+
+        public ActionResult Granary(int? buildingId, int? cityId) // to be used
+        {
+            var building = dbContext.Buildings.Find(buildingId);
+            return RedirectToAction("Index", "Buildings", new { cityId });
+        }
     }
 
     public class BuildingViewModel

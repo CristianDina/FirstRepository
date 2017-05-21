@@ -1,0 +1,31 @@
+﻿@model WebApplication2.Models.Building
+
+@{
+    ViewBag.Title = "Details";
+    this.Layout = null;
+}
+<div class="mine-detail">
+    <h2>@Model.BuildingType.Name</h2>
+    <img src="~/Content/img/@(Model.BuildingType.Name.ToLower()).png" />
+    
+    @{ 
+        if (Model.BuildingType.Name == "Barracks") {
+            <h4>A barracks is a building or group of buildings built to house soldiers.</h4>
+        }
+        else if (Model.BuildingType.Name == "Garnary")
+        {
+            <h4>A granary is a storehouse or room in a barn for threshed grain or animal feed.</h4>
+        }
+        else if (Model.BuildingType.Name == "Barn")
+        {
+            <h4>A barn is an agricultural building usually located on farms and used to house livestock, including cattle and horses, as well as equipment and fodder, and often grain.</h4>
+        }
+    }
+    
+    @using (Html.BeginForm("Upgrade", "Buildings", new { buildingId = this.Model.BuildingId, cityId = this.Model.CityId}))
+    {
+        Html.HiddenFor(m => m.BuildingId);
+        <button type="submit" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;">Upgrade</button>
+        @*<div>Do you want a fast upgrade?: @Html.CheckBox("fastUpgrade")</div>*@
+    }
+</div>
