@@ -283,8 +283,75 @@ namespace WebApplication2.Controllers
                                    Type = ResourceType.Wood,
                                    LastUpdate = DateTime.Now,
                                },
-                           }
-
+                           },
+                            Buildings = new List<Building>
+                            {
+                                new Building
+                                {
+                                    Level = 0,
+                                    BuildingTypeId = null,
+                                },
+                                new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                        new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                        new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                }
                        },
                    },
                 };

@@ -222,6 +222,321 @@ td {
     cursor: pointer;
 }
 
-.building{
+.building-barracks-0 {
+    position: absolute;
+    top: 192px;
+    left: 835px;
+}
 
+.building-barracks-1 {
+    position: absolute;
+    top: 255px;
+    left: 800px;
+}
+.building-barracks-2 {
+    position: absolute;
+    top: 387px;
+    left: 818px;
+}
+.building-barracks-3 {
+    position: absolute;
+    top: 465px;
+    left: 1038px;
+}
+.building-barracks-4 {
+    position: absolute;
+    top: 381px;
+    left: 1277px;
+}
+.building-barracks-5 {
+    position: absolute;
+    top: 303px;
+    left: 1231px;
+}
+.building-barracks-6 {
+    position: absolute;
+    top: 251px;
+    left: 1279px;
+}
+.building-barracks-7 {
+    position: absolute;
+    top: 205px;
+    left: 1214px;
+}
+.building-barracks-8 {
+    position: absolute;
+    top: 159px;
+    left: 1128px;
+}
+.building-barracks-9 {
+    position: absolute;
+    top: 129px;
+    left: 1030px;
+}
+.building-barracks-10 {
+    position: absolute;
+    top: 151px;
+    left: 945px;
+}
+.building-barracks-11 {
+    position: absolute;
+    top: 256px;
+    left: 922px;
+}
+.building-barracks-12 {
+    position: absolute;
+    top: 217px;
+    left: 1037px;
+}
+
+.building-garnary-0 {
+    position: absolute;
+    top: 175px;
+    left: 857px;
+}
+
+.building-garnary-1 {
+    position: absolute;
+    top: 226px;
+    left: 808px;
+}
+
+.building-garnary-2 {
+    position: absolute;
+    top: 383px;
+    left: 843px;
+}
+
+.building-garnary-3 {
+    position: absolute;
+    top: 443px;
+    left: 1036px;
+}
+
+.building-garnary-4 {
+    position: absolute;
+    top: 387px;
+    left: 1282px;
+}
+
+.building-garnary-5 {
+    position: absolute;
+    top: 300px;
+    left: 1230px;
+}
+
+.building-garnary-6 {
+    position: absolute;
+    top: 244px;
+    left: 1282px;
+}
+
+.building-garnary-7 {
+    position: absolute;
+    top: 190px;
+    left: 1215px;
+}
+
+.building-garnary-8 {
+    position: absolute;
+    top: 145px;
+    left: 1139px;
+}
+
+.building-garnary-9 {
+    position: absolute;
+    top: 110px;
+    left: 1051px;
+}
+
+.building-garnary-10 {
+    position: absolute;
+    top: 137px;
+    left: 951px;
+}
+
+.building-garnary-11 {
+    position: absolute;
+    top: 228px;
+    left: 940px;
+}
+
+.building-garnary-12 {
+    position: absolute;
+    top: 199px;
+    left: 1021px;
+}
+
+.building-barn-0 {
+    position: absolute;
+    top: 197px;
+    left: 866px;
+}
+
+.building-barn-1 {
+    position: absolute;
+    top: 252px;
+    left: 812px;
+}
+
+.building-barn-2 {
+    position: absolute;
+    top: 395px;
+    left: 843px;
+}
+
+.building-barn-3 {
+    position: absolute;
+    top: 467px;
+    left: 1042px;
+}
+
+.building-barn-4 {
+    position: absolute;
+    top: 403px;
+    left: 1283px;
+}
+
+.building-barn-5 {
+    position: absolute;
+    top: 322px;
+    left: 1233px;
+}
+
+.building-barn-6 {
+    position: absolute;
+    top: 256px;
+    left: 1283px;
+}
+
+.building-barn-7 {
+    position: absolute;
+    top: 206px;
+    left: 1226px;
+}
+
+.building-barn-8 {
+    position: absolute;
+    top: 164px;
+    left: 1145px;
+}
+
+.building-barn-9 {
+    position: absolute;
+    top: 129px;
+    left: 1064px;
+}
+
+.building-barn-10 {
+    position: absolute;
+    top: 157px;
+    left: 962px;
+}
+
+.building-barn-11 {
+    position: absolute;
+    top: 224px;
+    left: 1032px;
+}
+
+.building-barn-12 {
+    position: absolute;
+    top: 271px;
+    left: 932px;
+}
+
+.building-level {
+    position: absolute;
+    background: white;
+    border: 2px solid #598C51;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    transition: all .2s linear
+}
+
+.building-level:hover {
+    transform: scale(1.5);
+}
+
+.float {
+    z-index: 99999;
+}
+
+.building-details-0 {
+    position: absolute;
+    top: 245px;
+    left: 904px;
+}
+
+.building-details-1 {
+    position: absolute;
+    top: 295px;
+    left: 855px;
+}
+
+.building-details-2 {
+    position: absolute;
+    top: 416px;
+    left: 855px;
+}
+
+.building-details-3 {
+    position: absolute;
+    top: 511px;
+    left: 1042px;
+}
+
+.building-details-4 {
+    position: absolute;
+    top: 418px;
+    left: 1297px;
+}
+
+.building-details-5 {
+    position: absolute;
+    top: 362px;
+    left: 1248px;
+}
+
+.building-details-6 {
+    position: absolute;
+    top: 302px;
+    left: 1287px;
+}
+
+.building-details-7 {
+    position: absolute;
+    top: 258px;
+    left: 1221px;
+}
+
+.building-details-8 {
+    position: absolute;
+    top: 210px;
+    left: 1180px;
+}
+
+.building-details-9 {
+    position: absolute;
+    top: 180px;
+    left: 1090px;
+}
+
+.building-details-10 {
+    position: absolute;
+    top: 203px;
+    left: 995px;
+}
+
+.building-details-11 {
+    position: absolute;
+    top: 298px;
+    left: 982px;
+}
+
+.building-details-12 {
+    position: absolute;
+    top: 265px;
+    left: 1070px;
 }

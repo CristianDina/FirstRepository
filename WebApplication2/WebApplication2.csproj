@@ -224,7 +224,8 @@
     <Content Include="Content\img\barracks.png" />
     <Content Include="Content\img\city.jpg" />
     <Content Include="Content\img\city_buildings.jpg" />
-    <Content Include="Content\img\granary.png" />
+    <Content Include="Content\img\garnary.png" />
+    <Content Include="Content\img\hammer.jpg" />
     <Content Include="Content\img\icon-clay.png" />
     <Content Include="Content\img\icon-iron.png" />
     <Content Include="Content\img\icon-wheat.png" />

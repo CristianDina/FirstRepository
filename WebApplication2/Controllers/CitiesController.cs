@@ -129,7 +129,7 @@ namespace WebApplication2.Controllers
                         MineStyle = "mine-wood-3",
                         Description = "The woodcutter cuts down trees in order to produce lumber. The further you extend the woodcutter, the more lumber is produced.",
                     },
-                },            
+                },
                 Resources = new List<Resource>
                 {
                     new Resource
@@ -151,6 +151,74 @@ namespace WebApplication2.Controllers
                     {
                         Type = ResourceType.Wood,
                         LastUpdate = DateTime.Now,
+                    },
+                },
+                Buildings = new List<Building>
+                {
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                        new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                        new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
+                    },
+                    new Building
+                    {
+                        Level = 0,
+                        BuildingTypeId = null,
                     },
                 }
             });
