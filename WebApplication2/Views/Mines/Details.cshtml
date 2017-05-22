@@ -29,10 +29,13 @@
     @using (Html.BeginForm("NewUpgrade", "Mines", new { mineId = this.Model.MineId, cityId = this.Model.CityId }))
     {
         Html.HiddenFor(m => m.MineId);
-        <button type="submit" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;">Upgrade</button>
+        <button type="submit" style="border: none; background-color: @{ if (Model.isUpgrading == false)
+            {<text>lightgreen</text>} else {<text>gray</text> }  }; border-radius: 10px; font-size:x-large;" @{ if(Model.isUpgrading == true)  {<text>disabled</text>}  }>
+            Upgrade
+        </button>
+
         <div>Do you want a fast upgrade?: @Html.CheckBox("fastUpgrade")</div>
     }
-
 
     @section Scripts{
     <script type="text/javascript">

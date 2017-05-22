@@ -75,7 +75,8 @@ namespace WebApplication2.Controllers
             }
 
             mine.Level++;
-            mine.UpgradeCompletion = DateTime.Now.AddHours(0.5 * mine.Level);
+            if (!fastUpgrade)
+                mine.UpgradeCompletion = DateTime.Now.AddSeconds(10 * mine.Level);
             dbContext.SaveChanges();
 
             foreach(var item in r)

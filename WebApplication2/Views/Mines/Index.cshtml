@@ -24,19 +24,46 @@
             @foreach (var mine in Model.Mines)
             {
                         @*<a href="@Url.Action("Details", "Mines", new { mineId = mine.MineId })"*@
-                
+
                             <div class="@(mine.Type) mine-level mine-@(mine.Type.ToString().ToLower()) @mine.MineStyle mine-details-btn" data-mine-id="@mine.MineId" style="text-align: center; vertical-align: middle; font-weight: bold;">
                                 <div class="hourProduction hidden">@mine.GetProductionPerHour()</div>
+                                <div class="upgradeCompletion hidden">
+                                    @(mine.UpgradeCompletion.ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds)
+                                </div>
                                 <div>@mine.Level</div>
                             </div>
-                        @*@<!--a-->*@
+                            <div >
+                                @{ 
+                                    if (mine.UpgradeCompletion - DateTime.Now > DateTime.Now - DateTime.Now) { 
+                                        <div class="time-detail @mine.MineStyle-timebox" style="font-size:x-small" data-upgrade-completion="@(mine.UpgradeCompletion.ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds)"></div>
+                                    }
+                                 }
+                            </div>
+                        @*@<!--a--@((mine.UpgradeCompletion - DateTime.Now).ToString().Substring(0,8))-->*@
             }
         </div>
     </div>
-    <div id="mine-details-container">
+    <div id="mine-details-container" class="hidden">
         <div class="close-btn">X</div>
         <div class="content"></div>
     </div>
+    @{
+        int barnMax = 0;
+        int granaryMax = 0;
+        foreach (var building in Model.Buildings)
+        {
+            if (building.BuildingType!= null && building.BuildingType.Name == "Barn")
+            {
+                barnMax += 100 + 100 * building.Level;
+            }
+            else if (building.BuildingType != null && building.BuildingType.Name == "Garnary")
+            {
+                granaryMax += 100 + 100 * building.Level;
+            }
+        }
+    }
+    <div class="barnMax hidden">@barnMax</div>
+    <div class="granaryMax hidden">@granaryMax</div>
 </div>
 
 @section Scripts {

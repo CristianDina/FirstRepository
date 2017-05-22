@@ -546,3 +546,98 @@ td {
     top: 265px;
     left: 1070px;
 }
+
+.time-detail {
+    padding: 1px; 
+    background-color: white;
+    border-color: green;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+
+.mine-clay-1-timebox {
+    position: absolute;
+    top: 105px;
+    left: 245px;
+}
+
+.mine-clay-2-timebox {
+    position: absolute;
+    top: 275px;
+    left: 155px;
+}
+
+.mine-clay-3-timebox {
+    position: absolute;
+    top: 255px;
+    left: 335px;
+}
+
+.mine-wheat-1-timebox {
+    position: absolute;
+    top: 187px;
+    left: 135px;
+}
+
+.mine-wheat-2-timebox {
+    position: absolute;
+    top: 205px;
+    left: 50px;
+}
+
+.mine-wheat-3-timebox {
+    position: absolute;
+    top: 145px;
+    left: 60px;
+}
+
+.mine-wheat-4-timebox {
+    position: absolute;
+    top: 145px;
+    left: 125px;
+}
+
+.mine-wheat-5-timebox {
+    position: absolute;
+    top: 60px;
+    left: 245px;
+}
+
+.mine-wheat-6-timebox {
+    position: absolute;
+    top: 185px;
+    left: 370px;
+}
+
+
+.mine-wood-1-timebox {
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+.mine-wood-2-timebox {
+    position: absolute;
+    top: 55px;
+    left: 135px;
+}
+
+.mine-wood-3-timebox {
+    position: absolute;
+    top: 65px;
+    left: 330px;
+}
+
+.mine-iron-1-timebox {
+    position: absolute;
+    top: 120px;
+    left: 390px;
+}
+
+.mine-iron-2-timebox {
+    position: absolute;
+    top: 90px;
+    left: 105px;
+}
