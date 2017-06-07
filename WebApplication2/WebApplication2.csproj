@@ -336,6 +336,7 @@
     <Content Include="Views\TroopTypes\Edit.cshtml" />
     <Content Include="Views\TroopTypes\Index.cshtml" />
     <Content Include="Views\CityFilterView\Index.cshtml" />
+    <Content Include="Views\Buildings\Train.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

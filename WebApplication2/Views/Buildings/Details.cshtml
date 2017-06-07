@@ -69,7 +69,7 @@
             }
             <td>@Html.TextBox("quantity")</td>
             <td>
-                @using (Html.BeginForm("Train", "Buildings", new { troopType = troopType, cityId = Model.CityId, quantity = 10, troopTypeId = troopType.TroopTypeId }, FormMethod.Post))
+                @using (Html.BeginForm("Train", "Buildings", new { cityId = Model.CityId, quantity = 10, troopTypeId = troopType.TroopTypeId }))
                         {
                     <input type="image" src="~/Content/img/plus.png" width="15" height="15" id="upgradeButton" class="btTxt submit" value="Upgrade" />
                 }

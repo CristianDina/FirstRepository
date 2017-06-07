@@ -79,7 +79,7 @@ namespace WebApplication2.Controllers
             return RedirectToAction("Index", "Buildings", new { cityId });
         }
 
-        public ActionResult Train(TroopType troopType, int cityId, int quantity, int troopTypeId)
+        public ActionResult Train(int cityId, int quantity, int troopTypeId)
         {
             var city = dbContext.Cities.Find(cityId);
 
@@ -91,8 +91,13 @@ namespace WebApplication2.Controllers
 
             foreach(var res in resources)
             {
-                if(needed > res.Value)
-                    return View(new MessageViewModel { Message = $"Not Enough Resources" });
+                if (needed > res.Value)
+                {
+                    
+                    return View();
+                    //return RedirectToAction("Index", "Buildings", new { cityId });
+
+                }
             }
             
             foreach (var res in resources)
@@ -112,7 +117,7 @@ namespace WebApplication2.Controllers
                 
             } else
             {
-                city.Troops.Add(new Troop { TroupType = troopType, TroopCount = quantity, CityId = cityId, City = city, TroopTypeId = troopTypeId });
+                city.Troops.Add(new Troop { TroopCount = quantity, CityId = cityId, City = city, TroopTypeId = troopTypeId });
             }
             dbContext.SaveChanges();
             return RedirectToAction("Index", "Buildings", new { cityId });
