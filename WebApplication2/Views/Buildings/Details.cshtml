@@ -9,7 +9,8 @@
     <img src="~/Content/img/@(Model.BuildingType.Name.ToLower()).png" />
     
     @{ 
-        if (Model.BuildingType.Name == "Barracks") {
+        if (Model.BuildingType.Name == "Barracks")
+        {
             <h4>A barracks is a building or group of buildings built to house soldiers.</h4>
         }
         else if (Model.BuildingType.Name == "Garnary")
@@ -22,10 +23,63 @@
         }
     }
     
-    @using (Html.BeginForm("Upgrade", "Buildings", new { buildingId = this.Model.BuildingId, cityId = this.Model.CityId}))
+    @using (Html.BeginForm("Upgrade", "Buildings", new { buildingId = this.Model.BuildingId, cityId = this.Model.CityId }))
     {
         Html.HiddenFor(m => m.BuildingId);
         <button type="submit" style="border: none; background-color: lightgreen; border-radius: 10px; font-size:x-large;">Upgrade</button>
         @*<div>Do you want a fast upgrade?: @Html.CheckBox("fastUpgrade")</div>*@
     }
+    
+    @using WebApplication2.Models;
+@{
+    if (Model.BuildingType.Name == "Barracks")
+    {
+        <hr/>
+        <table style="overflow-x:auto; border-collapse: collapse; width: 100%;">
+        <tr>
+            <th>Troop Type</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>Time Required</th>
+            <th>Amount</th>
+            <th>Troops to train</th>
+        </tr>
+    @foreach (var troopType in new ApplicationDbContext().TroopTypes)
+    {
+        <tr>@{                   
+            <td>@troopType.Name</td>
+            <td>@troopType.Attack</td>
+            <td>@troopType.Defence</td>
+            <td>@troopType.CreationSpeed</td>
+            if (Model.City.Troops.Any(x => x.TroopTypeId == troopType.TroopTypeId))
+            {
+                int amount = 0;
+                foreach( var troop in Model.City.Troops)
+                {
+                    if (troop.TroopTypeId == troopType.TroopTypeId)
+                    {
+                        amount = troop.TroopCount;
+                    }
+                }
+                <td>@amount</td>
+            }
+            else
+            {
+                <td>0</td>
+            }
+            <td>@Html.TextBox("quantity")</td>
+            <td>
+                @using (Html.BeginForm("Train", "Buildings", new { troopType = troopType, cityId = Model.CityId, quantity = 10, troopTypeId = troopType.TroopTypeId }, FormMethod.Post))
+                        {
+                    <input type="image" src="~/Content/img/plus.png" width="15" height="15" id="upgradeButton" class="btTxt submit" value="Upgrade" />
+                }
+            </td>
+            
+
+            }
+        </tr>
+    }
+    </table>
+    }
+}
 </div>

@@ -78,6 +78,45 @@ namespace WebApplication2.Controllers
             var building = dbContext.Buildings.Find(buildingId);
             return RedirectToAction("Index", "Buildings", new { cityId });
         }
+
+        public ActionResult Train(TroopType troopType, int cityId, int quantity, int troopTypeId)
+        {
+            var city = dbContext.Cities.Find(cityId);
+
+
+            // danger
+            var resources = city.Resources;
+            var needed = (dbContext.TroopTypes.Find(troopTypeId).Attack + dbContext.TroopTypes.Find(troopTypeId).Defence) / 10;
+            
+
+            foreach(var res in resources)
+            {
+                if(needed > res.Value)
+                    return View(new MessageViewModel { Message = $"Not Enough Resources" });
+            }
+            
+            foreach (var res in resources)
+            {
+                res.Value -= needed;
+            }
+            // end of danger
+
+
+            if (city.Troops.Any(t => t.TroopTypeId == troopTypeId))
+            {
+                foreach(var troop in city.Troops)
+                {
+                    if (troop.TroopTypeId == troopTypeId)
+                        troop.TroopCount += quantity;
+                }
+                
+            } else
+            {
+                city.Troops.Add(new Troop { TroupType = troopType, TroopCount = quantity, CityId = cityId, City = city, TroopTypeId = troopTypeId });
+            }
+            dbContext.SaveChanges();
+            return RedirectToAction("Index", "Buildings", new { cityId });
+        }
     }
 
     public class BuildingViewModel
