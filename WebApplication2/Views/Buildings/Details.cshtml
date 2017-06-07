@@ -1,4 +1,4 @@
-﻿@model WebApplication2.Models.Building
+﻿@model DataAccess.Building
 
 @{
     ViewBag.Title = "Details";
@@ -30,7 +30,7 @@
         @*<div>Do you want a fast upgrade?: @Html.CheckBox("fastUpgrade")</div>*@
     }
     
-    @using WebApplication2.Models;
+    @using DataAccess;
 @{
     if (Model.BuildingType.Name == "Barracks")
     {

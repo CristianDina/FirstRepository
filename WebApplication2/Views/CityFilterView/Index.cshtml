@@ -1,4 +1,4 @@
-﻿@model WebApplication2.Models.CityFilterViewModel
+﻿@model DataAccess.CityFilterViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -27,10 +27,10 @@
         </div>
         <button type="submit">Submit</button>
     }
-    <table style="border-spacing: 40px;">
+    <table style="overflow-x:auto; border-collapse: collapse; width: 100%;">
         <tr>
-            <td>City</td>
-            <td>Troops</td>
+            <th>City</th>
+            <th>Troops</th>
         </tr>
     @if (Model.Results != null) { 
         foreach (var city in Model.Results)
