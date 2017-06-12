@@ -5,6 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DataAccess;
+using SimpleInjector;
+using SimpleInjector.Lifestyles;
+using BusinessLogic;
 
 namespace WebApplication2.Controllers
 {
@@ -13,7 +16,7 @@ namespace WebApplication2.Controllers
     {
         ApplicationDbContext dbContext = new ApplicationDbContext();
         // GET: Mines
-       
+
         public ActionResult Index()
         {
             var userId = this.User.Identity.GetUserId();

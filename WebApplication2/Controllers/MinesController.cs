@@ -13,10 +13,11 @@ namespace WebApplication2.Controllers
     [Authorize]
     public class MinesController : Controller
     {
-        private MinesService minesService;
-        public MinesController()
+        private IMinesService minesService;
+
+        public MinesController(IMinesService minesService)
         {
-            minesService = new MinesService();
+            this.minesService = minesService;
         }
         // GET: Mines
         public ActionResult Index(int? cityId)

@@ -8,10 +8,11 @@ namespace DataAccess
 {
     public class MinesRepository: IMinesRepository
     {
-        private ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext dbContext;
+
         public MinesRepository()
         {
-            dbContext = new ApplicationDbContext();
+            this.dbContext = new ApplicationDbContext();
         }
         public void SaveChanges()
         {

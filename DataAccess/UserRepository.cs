@@ -11,7 +11,7 @@ namespace DataAccess
         ApplicationDbContext dbContext;
         public UserRepository()
         {
-            dbContext = new ApplicationDbContext();
+            this.dbContext = new ApplicationDbContext();
         }
     
         public ApplicationUser GetUser(string userId)

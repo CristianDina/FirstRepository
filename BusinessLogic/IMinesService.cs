@@ -9,7 +9,6 @@ namespace BusinessLogic
 {
     public interface IMinesService
     {
-
         City UpdteResources(string userId);
     }
 }

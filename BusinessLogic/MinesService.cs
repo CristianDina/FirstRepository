@@ -9,12 +9,13 @@ namespace BusinessLogic
 {
     public class MinesService : IMinesService
     {
-        private IUserRepository userRepository;
-        private IMinesRepository minesRepository;
-        public MinesService()
+        private readonly IUserRepository userRepository;
+        private readonly IMinesRepository minesRepository;
+
+        public MinesService(IUserRepository userRepository, IMinesRepository minesRepository)
         {
-            userRepository = new UserRepository();
-            minesRepository = new MinesRepository();
+            this.userRepository = userRepository;
+            this.minesRepository = minesRepository;
         }
         
 
